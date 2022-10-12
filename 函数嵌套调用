@@ -1,0 +1,16 @@
+#include<stdio.h>
+void one_line()
+{
+	printf("hehe\n");
+}
+void three_line()
+{
+	int i = 0;
+	for (i = 0; i <= 3;  i++)
+		one_line();
+}
+int main(void)
+{
+	three_line();
+	return 0;
+}
