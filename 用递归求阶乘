@@ -1,0 +1,17 @@
+#include<stdio.h>
+int Fac(int n)
+{
+	if (n <= 1)
+		return 1;
+	else
+		return n * Fac(n - 1);
+}
+int main(void)
+{
+	int i = 0;
+	int ret = 0;
+	scanf("%d", &i);
+	ret = Fac(i);
+	printf("ret = %d\n", ret);
+	return 0;
+}
