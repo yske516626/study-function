@@ -1,0 +1,28 @@
+#include<stdio.h>
+int my_string(char* str)
+{
+int count = 0;
+while (*str != '\0')
+{
+count++;
+str++;
+}
+return count;
+}
+void reverse_string(char arr[])
+{
+char tmp = arr[0];
+int len = my_string(arr);
+arr[0] = arr[len - 1];
+arr[len - 1] = '\0';
+if (my_string(arr + 1) >= 2)
+reverse_string(arr + 1);
+arr[len - 1] = tmp;
+}
+int main(void)
+{
+char arr[] = "abcdef";
+reverse_string(arr);
+printf("%s\n", arr);
+return 0;
+}
