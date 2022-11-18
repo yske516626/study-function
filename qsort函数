@@ -1,0 +1,20 @@
+include<stdio.h>
+#include<stdlib.h>
+int cmp(const void* p1, const void * p2)
+{
+	return *(int*)p1 - *(int*)p2;
+	//注意返回的是整型，如果不是整型就要将结果强制转化为int型
+	//如果是结构体里的元素也要注意是不是整型，已经结构体也要将void型的p1转为自定义结构体类型
+}
+int main(void)
+{
+	int i = 0;
+	int arr[] = { 9,8,7,6,5,4,3,2,1,0 };
+	int size = sizeof(arr) / sizeof(arr[0]);
+	qsort(arr, size, sizeof(int), cmp);
+	for (i = 0; i < size - 1; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	return 0;
+}
