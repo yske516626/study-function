@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<assert.h>
+int my_strcmp(const char* str1, const char* str2)
+{
+	assert(str1 && str2);
+	while (*str1 == *str2)
+	{
+		if (*str1 == '\0')
+		{
+			return 0;
+		}
+		str1++;
+		str2++;
+	}
+	if (*str1 > *str2)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+int main(void)
+{
+	char a[] = "abcdef";
+	char b[] = "abcdff";
+	int ret = my_strcmp(a, b);
+	if (ret > 0)
+	{
+		printf("a big\n");
+	}
+	else if (ret = 0)
+	{
+		printf("a = b\n");
+	}
+	else
+	{
+		printf("b big\n");
+	}
+	return 0;
+}
