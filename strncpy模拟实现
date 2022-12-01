@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<assert.h>
+char* my_strncpy(char* dest, const char* src, size_t count)
+{
+	assert(dest != NULL);
+	assert(src != NULL);
+	char* ret = dest;
+	while (count && (*dest++ = *src++))
+	{
+		count--;
+	}
+	*dest++ = '\0';
+	return ret;
+
+}
+int main(void)
+{
+	char arr[50] = "abcdef";
+	char arr1[] = "cdeffrf";
+	my_strncpy(arr, arr1, 8);
+	printf("%s", arr);
+	return 0;
+}
