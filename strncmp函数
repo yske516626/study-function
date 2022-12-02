@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<string.h>
+int main(void)
+{
+	char str[][5] = { "r2o2","c3po","r2a6"};
+	int n = 0;
+	puts("Looking for 2R astromech droids ");
+	for (n = 0; n < 3; n++)
+		if (strncmp(str[n], "r2xx",2) == 0)
+		{
+			printf("found %s \n", str[n]);
+		}
+	return 0;
+}
