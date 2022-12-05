@@ -1,0 +1,16 @@
+
+#include<stdio.h>
+#include<string.h>
+int main(void)
+{
+	char arr[] = "abcdef@e.1";
+	const char* p = "@.";
+	char arr1[50] = { 0 };
+	strcpy(arr1, arr);
+	char* ret = NULL;
+	for (ret = strtok(arr1, p); ret != NULL; ret = strtok(NULL, p))
+	{
+		printf("%s  ", ret);
+	}
+	return 0;
+}
