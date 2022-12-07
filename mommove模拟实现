@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<assert.h>
+void* my_mommove(void* dest, const void* src, size_t count)
+{
+	assert(dest != NULL);
+	assert(src != NULL);
+	void* ret = dest;
+	if (dest < src)
+	{
+		while (count--)
+		{
+			*(char*)dest = *(char*)src;
+			dest = (char*)dest + 1;
+			src = (char*)src + 1;
+		}
+	}
+	else
+	{
+		while (count--)
+		{
+			*((char*)dest + count) = *((char*)src + count);
+		}
+	}
+	return ret;
+}
+int main(void)
+{
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,0 };
+	int* a = (int*)my_mommove(arr + 2, arr, 20);
+	int i = 0;
+	for (i = 0; i < 10;i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	printf("%d", *a);
+	return 0;
+}
